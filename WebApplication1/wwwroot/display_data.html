@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Отображение данных</title>
+</head>
+<body>
+    <h1>Отображение данных</h1>
+    <div id="data"></div>
+
+    <script>
+        // Получаем значение из куки
+        var cookieValue = document.cookie.replace(/(?:(?:^|.*;\s*)my_cookie\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+
+        // Отображаем данные
+        if (cookieValue) {
+            document.getElementById("data").innerText = "Значение в куках: " + cookieValue;
+        } else {
+            document.getElementById("data").innerText = "Куки не найдены";
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+

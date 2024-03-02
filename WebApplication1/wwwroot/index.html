@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для ввода данных</title>
+</head>
+<body>
+    <h1>Форма для ввода данных</h1>
+    <form id="myForm">
+        <label for="value">Значение:</label>
+        <input type="text" id="value" name="value"><br><br>
+
+        <label for="expiry_date">Дата и время истечения:</label>
+        <input type="datetime-local" id="expiry_date" name="expiry_date"><br><br>
+
+        <input type="button" value="Отправить" onclick="saveData()">
+    </form>
+
+    <script>
+        function saveData() {
+            var value = document.getElementById("value").value;
+            var expiryDate = document.getElementById("expiry_date").value;
+
+
+            document.cookie = "my_cookie=" + value + "; expires=" + expiryDate;
+
+
+            window.location.href = "display_data.html";
+        }
+    </script>
+</body>
+</html>
+
+
